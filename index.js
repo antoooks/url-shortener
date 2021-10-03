@@ -9,6 +9,7 @@ const CronJob = require('cron').CronJob;
 const localStorage = require('localStorage');
 
 const port = config.server.port;
+const baseUrl = config.server.base_url;
 
 server.engine('html', mustacheExpress());
 server.set('view engine', 'html');
@@ -29,7 +30,8 @@ server.get('/', function(req,res) {
     let urls = {
         "fullUrl": localStorage.getItem('fullUrl'),
         "shortUrl": localStorage.getItem('shortUrl'),
-        "urls": JSON.parse(localStorage.getItem('urls'))
+        "urls": JSON.parse(localStorage.getItem('urls')),
+        "baseUrl": baseUrl,
     }
     res.render('index',urls);
 });

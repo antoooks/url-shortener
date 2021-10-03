@@ -4,7 +4,6 @@
         <title>url shortener</title>
         <link rel="stylesheet" href="css/materialize/css/materialize.min.css"/>
         <link rel="stylesheet" href="css/style.css"/>
-        <script src="../handler.js"></script>
     </head>
     <body>
         <nav>
@@ -41,7 +40,7 @@
                             <h1>
                                 {{#shortUrl.length}}
                                     <a href="{{& fullUrl}}">
-                                        https://lurus.in/{{shortUrl}}
+                                        {{baseUrl}}/{{shortUrl}}
                                     </a>
                                 {{/shortUrl.length}}
                             </h1>
@@ -59,7 +58,7 @@
                             {{#urls}}
                                 <tr>
                                     <td>{{fullUrl}}</td>
-                                    <td><a href="{{& fullUrl}}" onclick="addHits('{{shortUrl}}')">https://lurus.in/{{shortUrl}}</a></td>
+                                    <td><a href="{{& fullUrl}}" onclick="addHits('{{shortUrl}}')">{{baseUrl}}/{{shortUrl}}</a></td>
                                     <td>{{hits}}</td>
                                 </tr>
                             {{/urls}}
