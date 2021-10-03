@@ -1,6 +1,7 @@
 example.config = {
     my_environment: {
         "server": {
+            "base_url": "http://lurus.in",
             "host": "localhost",
             "port": 8000
         },
